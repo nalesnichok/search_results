@@ -1,4 +1,5 @@
 openapi: 3.0.3
+security: []
 servers:
   - url: '//petstore.swagger.io/v2'
 info:
@@ -28,11 +29,31 @@ tags:
     externalDocs:
       description: Find out more about our store
       url: 'http://swagger.io'
+  - name: kek
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
+  - name: zeta
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
+  - name: Schemas
+    description: test
+  - name: alpha
+    description: Operations about user
+    externalDocs:
+      description: Find out more about our store
+      url: 'http://swagger.io'
 paths:
   /pet:
     post:
       tags:
         - pet
+        - zeta
+        - alpha
+        - kek
       summary: Add a new pet to the store
       description: ''
       operationId: addPet

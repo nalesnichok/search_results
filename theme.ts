@@ -1,5 +1,15 @@
 import { lighten, darken, readableColor } from 'polished';
 
+const searchIcon = `
+  <svg version="1.1" viewBox="0 0 15 16" width="15" height="16" xmlns="http://www.w3.org/2000/svg" fill="none"
+       className="search-icon">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M7.5 14C11.0899 14 14 11.0899 14 7.5C14 3.91015 11.0899 1 7.5 1C3.91015 1 1 3.91015 1 7.5C1 11.0899 3.91015 14 7.5 14Z"
+          stroke="currentColor" stroke-width="2"></path>
+    <path d="M7.5 5C6.11929 5 5 6.11929 5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    <path d="M1 15L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>`
+
 export const theme = {
   // spacing: {
   //   unit: 5,
@@ -15,10 +25,20 @@ export const theme = {
   colors: {
     // tonalOffset: 0.2,
     primary: {
-      main: '#227a88',
+      main: '#103426',
       // light: ({ colors }) => lighten(colors.tonalOffset, colors.primary.main),
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
+    },
+    lightGreen: {
+      main: '#00D2B9',
+      contrastText: '#000000',
+    },
+    lightBlue: {
+      main: '#F1F5F8'
+    },
+    darkBlue: {
+      main: '#D2DFE8'
     },
     // success: {
     //   main: '#00aa13',
@@ -45,7 +65,7 @@ export const theme = {
     //   contrastText: ({ colors }) => readableColor(colors.info.main),
     // },
     text: {
-      primary: '#424242',
+      primary: '#000000',
       // secondary: '#4e566d',
     },
     // border: {
@@ -71,12 +91,12 @@ export const theme = {
     //   },
     // },
     http: {
-      get: '#6bbd5b',
-      post: '#248fb2',
-      put: '#9b708b',
+      get: '#00D2B9',
+      post: '#0D4AC2',
+      put: '#916FEF',
       options: '#d3ca12',
-      patch: '#e09d43',
-      delete: '#e27a7a',
+      patch: '#B36526',
+      delete: '#FF4635',
       basic: '#999',
       link: '#31bbb6',
       head: '#c167e4',
@@ -95,55 +115,54 @@ export const theme = {
   sidebar: {
     backgroundColor: '#fafafa',
     width: '260px',
+    fontFamily: '"Founders Grotesk", sans-serif',
+    spacing: {
+      offsetTop: '74px; padding-bottom: 74',
+    }
   },
   // tocPanel: {
   //   width: '240px',
   // },
 
+  components: {
+    buttons: {
+      borderRadius: '20px',
+      secondary: '#00D2B9'
+    },
+    search: {
+      iconColor:  ({ colors }) => colors.primary.main,
+      icon: searchIcon
+    }
+  },
   typography: {
     fontSize: '16px',
     lineHeight: '1.5em',
     fontWeightRegular: '400',
     fontWeightBold: '600',
     fontWeightLight: '300',
-    fontFamily: '"Source Sans Pro", sans-serif',
+    fontFamily: '"Founders Grotesk Text", sans-serif',
     headings: {
-      fontFamily: '"Source Sans Pro", sans-serif',
-      fontWeight: '600',
+      fontFamily: '"Founders Grotesk Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+      fontWeight: '600'
     },
-    // heading1: {
-    //   fontSize: '1.85714em',
-    //   fontWeight: '600',
-    //   fontFamily: ({ typography }) => typography.headings.fontFamily,
-    //   lineHeight: ({ typography }) => typography.lineHeight,
-    //   color: ({ colors }) => colors.primary.main,
-    //   capitalize: true,
-    // },
-    // heading2: {
-    //   fontSize: '1.57143em',
-    //   fontWeight: '600',
-    //   color: ({ colors }) => colors.text.primary,
-    //   fontFamily: ({ typography }) => typography.headings.fontFamily,
-    //   lineHeight: ({ typography }) => typography.lineHeight,
-    //   capitalize: false,
-    // },
-    // heading3: {
-    //   fontSize: '1.27em',
-    //   fontWeight: '600',
-    //   color: ({ colors }) => colors.text.primary,
-    //   fontFamily: ({ typography }) => typography.headings.fontFamily,
-    //   lineHeight: ({ typography }) => typography.lineHeight,
-    //   capitalize: false,
-    // },
-    // heading4: {
-    // // ...
-    // },
-    // heading5: {
-    // // ...
-    // },
-    // heading6: {
-    // // ...
-    // },
+    heading1: {
+      color: '#000000'
+    },
+    heading2: {
+      color: '#000000'
+    },
+    heading3: {
+      color: '#000000'
+    },
+    heading4: {
+      color: '#000000'
+    },
+    heading5: {
+      color: '#000000'
+    },
+    heading6: {
+      color: '#000000'
+    },
     code: {
       fontSize: '13px',
       fontFamily: '"Source Code Pro", sans-serif',
@@ -153,7 +172,7 @@ export const theme = {
       wrap: false,
     },
     links: {
-      color: ({ colors }) => colors.primary.main,
+      color: '#0d4ac2',
       visited: ({ typography }) => typography.links.color,
       hover: ({ typography }) => lighten(0.2, typography.links.color),
     },
@@ -167,7 +186,7 @@ export const theme = {
     nestedBackground: '#fafafa',
     // linesColor: theme => lighten( theme.colors.tonalOffset, desaturate(theme.colors.tonalOffset, theme.colors.primary.main) ),
     // defaultDetailsWidth: '75%',
-    // typeNameColor: theme => theme.colors.text.secondary,
+    typeNameColor: '#041B2E',
     // typeTitleColor: theme => theme.schema.typeNameColor,
     // requireLabelColor: theme => theme.colors.error.main,
     // labelsTextSize: '0.9em',

@@ -1,18 +1,32 @@
 ---
-title: Creating React Components
+toc:
+  enable: true
+  maxDepth: 3
 ---
 
-import { Counter } from '../components/Counter.tsx'
+import { OpenApiRequestBody, OpenApiExample, JsonSchema, OpenApiCodeSample } from '@redocly/developer-portal/ui';
 
-# Creating React components
+# Tutorial: Get balances
 
-This page describes developing React components for **Redocly Portal**.
+This tutorial shows you how to use the Sample API to retrieve asset balances in a customer's portfolio.
 
----
+You will learn about the requests and responses your integration must handle to:
 
-## Component example
+* Retrieve the balance of a specific digital asset by sending a `GET` request to the `/balance/{'{'}asset{'}'}` endpoint `{'{'}segment_id{'}'}`.
+* Retrieve the balance of all digital assets in a customer's portfolio by sending a `GET` request to the `/balances` endpoint.
 
-<Counter />
 
-TBD
+## Prerequisites
 
+Both `GET /balance/{'{'}asset{'}'}` and `GET /balances` endpoints are protected by Bearer authentication. To successfully call these endpoints, you must include a valid Bearer authentication token in the request header.
+
+- **dataSetId:** `segment_${'{'}segment_id{'}'}`
+  - `${'{'}segment_id{'}'}` value is found in the `config.yml` file.
+
+
+
+Here is an example. My name is {{process.env.MY_ENV_NAME}}.
+
+```js
+{{process.env.MY_ENV_NAME}}
+```

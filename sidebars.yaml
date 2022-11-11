@@ -43,6 +43,11 @@ training:
     pages:
       - page: openapi/reference.page.yaml/*
 
+  - group: Rebilly API
+    expanded: false
+    pages:
+      - page: openapi/swagger.page.yaml/*
+
   - group: Admin
     expanded: true
     pages:
